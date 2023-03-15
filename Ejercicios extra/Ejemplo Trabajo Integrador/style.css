@@ -1,0 +1,285 @@
+/* Imports */
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap");
+
+/* Reset CSS */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Variables */
+:root {
+  --font-family: "Nunito", sans-serif;
+  --font-weight: 400;
+  --font-size: 1rem;
+  --line-height: 1;
+
+  --primary: #1ad4cb;
+  --secondary: #1846c4;
+  --tertiary: #138911;
+  --white: #fff;
+  --black: #000;
+  --gray: #ccc;
+}
+
+/* Global */
+body {
+  font-family: var(--font-family);
+  font-weight: var(--font-weight);
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+  color: var(--black);
+}
+
+a {
+  color: inherit;
+}
+
+/* Layout */
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+/* Utilities */
+.d-flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+/* Custom */
+.navbar {
+  background-color: var(--primary);
+  padding-block: 1.5rem;
+  color: var(--black);
+}
+
+.navbar__items {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar__item {
+  margin: 0 1rem;
+  font-size: 1.25rem;
+}
+
+.navbar__item a {
+  text-decoration: none;
+}
+
+.navbar__item a:hover {
+  text-decoration: underline;
+  font-size: 1.3rem;
+  transition: 0.3s ease-in-out;
+}
+
+.active {
+  text-decoration: underline;
+}
+
+.brand__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-block: 2rem;
+}
+
+@media (min-width: 768px) {
+  .brand__container {
+    flex-direction: row;
+    flex-direction: row-reverse;
+    gap: 1.5rem;
+  }
+}
+
+.brand__container img {
+  width: 100%;
+  max-width: 250px;
+  border-radius: 30% 30% 0 0;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+.brand__title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  margin-block: 2rem;
+}
+
+.brand__title h1 {
+  font-size: 2.5rem;
+  font-weight: 900;
+  text-align: center;
+  color: var(--secondary);
+}
+
+.brand__title h2 {
+  font-size: 1.25rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .brand__title {
+    margin-block: 0;
+  }
+
+  .brand__title h1 {
+    font-size: 3.5rem;
+  }
+
+  .brand__title h2 {
+    font-size: 1.5rem;
+  }
+}

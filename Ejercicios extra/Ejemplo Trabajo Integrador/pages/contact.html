@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contacto</title>
+  </head>
+
+  <header>
+    <nav>
+      <ul>
+        <li>
+          <a href="../index.html">Inicio</a>
+        </li>
+        <li>
+          <a href="./about-us.html">La empresa</a>
+        </li>
+        <li>
+          <a href="./contact.html">Contacto</a>
+        </li>
+        <li>
+          <a href="./make-order.html">Realizar pedido</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <body>
+    <form id="formContacto">
+      <div>
+        <label for="name">Nombre</label>
+        <input
+          id="txNombre"
+          type="text"
+          name="name"
+          placeholder="Ingresa tu nombre"
+          required
+          autocomplete="off"
+        />
+      </div>
+      <div>
+        <label for="email">Correo electrónico</label>
+        <input
+          id="txEmail"
+          type="email"
+          name="email"
+          placeholder="Ingresa tu dirección de correo"
+          required
+          autocomplete="off"
+        />
+      </div>
+      <div>
+        <label for="phone">Teléfono</label>
+        <input
+          id="txTelefono"
+          type="tel"
+          name="phone"
+          placeholder="Ingresa tu número de teléfono"
+          required
+          autocomplete="off"
+        />
+      </div>
+      <div>
+        <label for="message">Mensaje</label>
+        <textarea
+          id="txMensaje"
+          name="message"
+          cols="30"
+          rows="10"
+          placeholder="Ingresa aquí tu mensaje"
+          required
+        ></textarea>
+      </div>
+      <button id="btnEnviar" type="submit">Enviar</button>
+    </form>
+  </body>
+
+  <script src="../main.js"></script>
+</html>
