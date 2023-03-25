@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 12</title>
+  </head>
+
+  <style>
+    html,
+    body {
+      height: 100vh;
+      background-color: #222;
+      color: #fff;
+      font-family: system-ui, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.2rem;
+    }
+
+    form {
+      width: 300px;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    form > div {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      margin-bottom: 0.5rem;
+    }
+
+    input {
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      border: none;
+      background-color: #fff;
+      color: #222;
+      font-size: inherit;
+    }
+
+    select {
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      border: none;
+      background-color: #fff;
+      color: #222;
+      font-size: inherit;
+    }
+
+    textarea {
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      border: none;
+      background-color: #fff;
+      color: #222;
+      font-size: inherit;
+    }
+
+    button {
+      background-color: #41e099;
+      color: #222;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      margin-top: 1rem;
+      font-size: inherit;
+    }
+
+    button:hover {
+      background-color: #1efc98;
+    }
+  </style>
+
+  <body>
+    <form id="formPedido">
+      <div>
+        <label for="txCliente">Nombre del cliente</label>
+        <input type="text" name="txCliente" id="txCliente" required />
+      </div>
+
+      <div>
+        <label for="cboMaterial">Material de la caja</label>
+        <select name="cboMaterial" id="cboMaterial" required>
+          <option>Seleccionar...</option>
+          <option value="madera">Madera</option>
+          <option value="carton">Carton</option>
+          <option value="plastico">Plastico</option>
+        </select>
+      </div>
+
+      <div>
+        <label>Tamaño de la caja</label>
+        <div>
+          <input
+            type="radio"
+            name="rbTamanio"
+            id="rbPequenia"
+            value="pequeña"
+            checked
+          />
+          <label for="rbPequenia">Pequeña</label>
+        </div>
+        <div>
+          <input type="radio" name="rbTamanio" id="rbMediana" value="mediana" />
+          <label for="rbMediana">Mediana</label>
+        </div>
+        <div>
+          <input type="radio" name="rbTamanio" id="rbGrande" value="grande" />
+          <label for="rbGrande">Grande</label>
+        </div>
+      </div>
+
+      <div>
+        <label for="taComentarios">Comentarios</label>
+        <textarea name="taComentarios" id="taComentarios" rows="5"></textarea>
+      </div>
+
+      <button id="btnEnviar">Enviar</button>
+    </form>
+  </body>
+
+  <script>
+    // ${Cliente} ha pedido una caja de ${material} de tamaño ${tamanio}.
+
+    const form = document.getElementById("formPedido");
+    const btnEnviar = document.getElementById("btnEnviar");
+    const cliente = document.getElementById("txCliente");
+    const material = document.getElementById("cboMaterial");
+    const tamanios = document.getElementsByName("rbTamanio");
+    const comentarios = document.getElementById("taComentarios");
+
+    let tamanio = "";
+    for (let i = 0; i < tamanios.length; i++) {
+      if (tamanios[i].checked) {
+        tamanio = tamanios[i].value;
+      }
+    }
+
+    btnEnviar.addEventListener("click", (e) => {
+      e.preventDefault();
+
+      alert(
+        `${cliente.value} ha pedido una caja de ${material.value} de tamaño ${tamanio}. Comentarios: ${comentarios.value}`
+      );
+    });
+  </script>
+</html>

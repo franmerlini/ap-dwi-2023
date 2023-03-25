@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 13</title>
+  </head>
+
+  <style>
+    html,
+    body {
+      height: 100vh;
+      background-color: #222;
+      color: #fff;
+      font-family: system-ui, sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.2rem;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      max-width: 300px;
+      width: 100%;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    form > div {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      margin-bottom: 0.5rem;
+    }
+
+    input {
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      border: none;
+      background-color: #fff;
+      color: #222;
+      font-size: inherit;
+    }
+
+    button {
+      background-color: #41e099;
+      color: #222;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      margin-top: 1rem;
+      font-size: inherit;
+    }
+
+    button:hover {
+      background-color: #1efc98;
+    }
+  </style>
+
+  <body>
+    <div class="container">
+      <form id="formNumeroSecreto">
+        <div>
+          <label for="txNumero">Número</label>
+          <input type="number" id="txNumero" />
+        </div>
+
+        <button type="submit">Intentar</button>
+      </form>
+
+      <label id="lblResultado"></label>
+    </div>
+  </body>
+
+  <script>
+    const formNumeroSecreto = document.getElementById("formNumeroSecreto");
+    const txNumero = document.getElementById("txNumero");
+    const lblResultado = document.getElementById("lblResultado");
+
+    const numeroSecreto = 4;
+    const cantidadIntentos = 3;
+
+    let intentos = 0;
+
+    formNumeroSecreto.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      intentos++;
+
+      if (intentos < cantidadIntentos) {
+        if (txNumero.value == numeroSecreto) {
+          lblResultado.innerText = "¡Ganaste!";
+        } else {
+          lblResultado.innerText =
+            "Número incorrecto. Intentos restantes: " +
+            (cantidadIntentos - intentos) +
+            ".";
+        }
+      } else {
+        lblResultado.innerText = "¡Perdiste!";
+      }
+    });
+  </script>
+</html>
